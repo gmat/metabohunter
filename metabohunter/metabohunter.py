@@ -250,7 +250,9 @@ if IPython:
             )
             
             # Overwrite the settings using kwargs passed on create
-            self.settings = dict( self.defaults.items() + kwargs.items() )
+            self.settings = dict()
+            self.setting.update(self.defaults)
+            self.setting.update(kwargs)
 
             # Set up widgets
             self.form = widgets.ContainerWidget()
